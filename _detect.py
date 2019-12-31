@@ -110,6 +110,9 @@ if __name__ == "__main__":
             # unique_labels = detections[:, -1].cpu().unique()
             # n_cls_preds = len(unique_labels)
             # bbox_colors = random.sample(colors, n_cls_preds)
+
+            print("image_filename,label_id,x,y,w,h,confidence")
+
             for x1, y1, x2, y2, conf, cls_conf, cls_pred in detections:
 
                 # print("\t+ Label: %s, Conf: %.5f" % (classes[int(cls_pred)], cls_conf.item()))
