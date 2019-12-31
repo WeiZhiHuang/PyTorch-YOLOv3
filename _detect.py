@@ -36,6 +36,8 @@ if __name__ == "__main__":
     opt = parser.parse_args()
     # print(opt)
 
+    print("image_filename,label_id,x,y,w,h,confidence")
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     os.makedirs("output", exist_ok=True)
@@ -110,8 +112,6 @@ if __name__ == "__main__":
             # unique_labels = detections[:, -1].cpu().unique()
             # n_cls_preds = len(unique_labels)
             # bbox_colors = random.sample(colors, n_cls_preds)
-
-            print("image_filename,label_id,x,y,w,h,confidence")
 
             for x1, y1, x2, y2, conf, cls_conf, cls_pred in detections:
 
